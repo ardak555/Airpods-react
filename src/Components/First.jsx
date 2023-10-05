@@ -1,4 +1,4 @@
-import './First.css';
+import '../assets/css/First.css';
 
 const First = () => {
     return (

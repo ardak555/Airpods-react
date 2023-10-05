@@ -1,0 +1,148 @@
+.Header{
+    padding: 0;
+    background-color: black;
+  }
+  .mainHeader{
+    display: flex;
+    flex-direction: column;
+    --bs-gutter-x:13rem !important;
+  }
+  
+  .container{
+    --bs-gutter-x: 17.5rem;
+  }
+  .navBarUl {
+    list-style: none;
+    justify-content: space-between;
+    color: rgba(255, 255, 255, .8);
+    font-size: 12px;
+  }
+  
+  .navBarLi .logo{
+    font-weight: 600;
+    font-size: 17px;
+  }
+  
+  .scroledSecondLine{
+    margin: 0 !important;
+    margin-bottom: 10px !important;
+    background-color: rgba(132, 131, 131, .24) !important;
+    display: flex !important;
+    justify-content: space-evenly !important;
+    align-items: center !important;
+    position: fixed !important;
+    top: 0px !important;
+  
+    width: 100% !important;
+    transition: all 0.5s ease !important;
+    font-size: 12px !important;
+  }
+  
+  .navgroup{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 16rem;
+    margin-top: 1rem;
+  }
+  
+  
+  .navLine {
+    border-bottom: 1px solid rgba(132, 131, 131, .87);
+    position: fixed;
+    top: 80px;
+    width: 70%;
+    transition: all 0.5s ease;
+  }
+  
+  .bigLine {
+    border-bottom: 1px solid rgba(132, 131, 131, .87);
+    top: 3.5rem;
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .navgroup .secondList {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .navgroup .secondList li {
+    list-style: none;
+  }
+  
+  .secondHeader {
+    display: flex;
+    color: rgba(255, 255, 255, .8);
+    align-items: center;
+    justify-content: space-around;
+    font-size: 12px;
+    position: fixed;
+    top: 30px;
+    background-color: black;
+    left: 0%;
+    width: 100%;
+  }
+  
+  .navHeader {
+    color: white;
+    font-size: 20px;
+  }
+  
+  .buyBtn {
+    background-color: #0071e3;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 10px;
+    text-decoration: none;
+  }
+  
+  .navBarUl {
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .container .secondHeader .secondList .navBarTraySmall {
+    display: none;
+  }
+  
+  .container .navBarUl .navBarMenu {
+    display: none;
+  }
+  
+  .firstsmalicon{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  
+  @media screen and (max-width: 834px) {
+  
+    .container .secondHeader .secondList .navBarTraySmall,
+    .container .navBarUl .navBarMenu {
+      display: inline-block;
+    } 
+  
+    .container .navBarUl .non,.container .secondHeader .secondList .no{
+      display: none;
+    }
+  
+    .container .navBarUl{
+      width: 100%;
+  
+    }
+  
+    .container .navBarUl .navBaritem{
+      display: flex !important;
+  
+    }
+  
+  }
+  
