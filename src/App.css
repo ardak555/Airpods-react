@@ -169,9 +169,21 @@
   font-size: 17px;
 }
 
-.navBarLi .trans{
-  
+.scroledSecondLine{
+  margin: 0 !important;
+  margin-bottom: 10px !important;
+  background-color: rgba(132, 131, 131, .24) !important;
+  display: flex !important;
+  justify-content: space-evenly !important;
+  align-items: center !important;
+  position: fixed !important;
+  top: 0px !important;
+
+  width: 100% !important;
+  transition: all 0.5s ease !important;
+  font-size: 12px !important;
 }
+
 .navgroup{
   display: flex;
   align-items: center;
@@ -192,7 +204,7 @@
 
 .bigLine {
   border-bottom: 1px solid rgba(132, 131, 131, .87);
-  top: 80px;
+  top: 3.5rem;
   width: 100%;
   transition: all 0.5s ease-in-out;
 }
@@ -250,12 +262,32 @@
   display: none;
 }
 
+.firstsmalicon{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 
 @media screen and (max-width: 834px) {
 
   .container .secondHeader .secondList .navBarTraySmall,
   .container .navBarUl .navBarMenu {
     display: inline-block;
+  } 
+
+  .container .navBarUl .non,.container .secondHeader .secondList .no{
+    display: none;
+  }
+
+  .container .navBarUl{
+    width: 100%;
+
+  }
+
+  .container .navBarUl .navBaritem{
+    display: flex !important;
+
   }
 
 }

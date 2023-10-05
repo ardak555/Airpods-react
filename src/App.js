@@ -1,11 +1,14 @@
-import { AiFillApple, AiOutlineDown, AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
-import { BsBag} from "react-icons/bs";
+import {
+  AiFillApple,
+  AiOutlineDown,
+  AiOutlineMenu,
+  AiOutlineSearch,
+} from "react-icons/ai";
+import { BsBag } from "react-icons/bs";
 import "./App.css";
 import bootstrap from "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import First from "./First/First";
 import React, { useEffect } from "react";
-
-
 
 function App() {
   // useEffect(() => {
@@ -43,9 +46,8 @@ function App() {
   //   };
   // }
   // , []);
-  
-  useEffect(() => {
 
+  useEffect(() => {
     const navLine = document.querySelector(".navLine");
 
     function handleScroll() {
@@ -54,8 +56,6 @@ function App() {
       } else {
         navLine.classList.remove("bigLine");
       }
-  
-      
     }
 
     window.addEventListener("scroll", handleScroll);
@@ -63,10 +63,25 @@ function App() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }
-  , []);
+  }, []);
 
-  
+
+  useEffect(() => {
+    const scroledSecondLine = document.querySelector(".scroledSecondLine");
+
+    function handleScrolll() {
+      if (window.scrollY > 50) {
+        scroledSecondLine.classList.add("scroledSecondLine");
+      } else {
+        scroledSecondLine.classList.remove("scroledSecondLine");
+      }
+    }
+    window.addEventListener("scroll", handleScrolll);
+    return () => {
+      window.removeEventListener("scroll", handleScrolll);
+    };
+  }, []);
+
   return (
     <>
       {/* <div className="App">
@@ -126,23 +141,24 @@ function App() {
     </div> */}
       <div className="App">
         <div className="container mainHeader">
-          <div className="col-lg-12 ">
+          <div className="col-lg-12 firstalign">
             <ul className="navBarUl d-flex  justify-content-space-between">
               <li className="navBarLi">
                 <AiFillApple className="logo" />
               </li>
-              <li className="navBarLi">Store</li>
-              <li className="navBarLi">Mac</li>
-              <li className="navBarLi">iPad</li>
-              <li className="navBarLi">iPhone</li>
-              <li className="navBarLi">Watch</li>
-              <li className="navBarLi">Vision</li>
-              <li className="navBarLi">AirPods</li>
-              <li className="navBarLi">TV&Home</li>
-              <li className="navBarLi">Music</li>
-              <li className="navBarLi">Acsessories</li>
-              <li className="navBarLi">Support</li>
+              <li className="navBarLi non">Store</li>
+              <li className="navBarLi non">Mac</li>
+              <li className="navBarLi non">iPad</li>
+              <li className="navBarLi non">iPhone</li>
+              <li className="navBarLi non">Watch</li>
+              <li className="navBarLi non">Vision</li>
+              <li className="navBarLi non">AirPods</li>
+              <li className="navBarLi non">TV&Home</li>
+              <li className="navBarLi non">Music</li>
+              <li className="navBarLi non">Acsessories</li>
+              <li className="navBarLi non">Support</li>
 
+              <div className="firstsmalicon">
               <li className="navBarLi navBaritem">
                 <AiOutlineSearch className="logo trans" />
               </li>
@@ -152,22 +168,22 @@ function App() {
               <li className="navBarMenu">
                 <AiOutlineMenu />
               </li>
+              </div>
             </ul>
           </div>
-          <div className="secondHeader">
+          <div className="secondHeader scroledSecondLine">
             <div className="navgroup">
               <h3 className="navHeader">AirPods Pro (2nd generation)</h3>
               <ul className="secondList">
-                <li>Overview</li>
-                <li>Tech Specs</li>
-                <li>Compare</li>
+                <li className="no">Overview</li>
+                <li className="no">Tech Specs</li>
+                <li className="no">Compare</li>
                 <li className="navBarTraySmall">
                   <AiOutlineDown />
                 </li>
                 <li>
                   <div className="buyBtn">Buy</div>
                 </li>
-                
               </ul>
               <div className="navLine"></div>
             </div>
