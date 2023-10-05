@@ -151,8 +151,12 @@
 .mainHeader{
   display: flex;
   flex-direction: column;
+  --bs-gutter-x:13rem !important;
 }
 
+.container{
+  --bs-gutter-x: 17.5rem;
+}
 .navBarUl {
   list-style: none;
   justify-content: space-between;
@@ -160,18 +164,46 @@
   font-size: 12px;
 }
 
-.secondList {
+.navBarLi .logo{
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.navBarLi .trans{
+  
+}
+.navgroup{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  gap: 16rem;
+  margin-top: 1rem;
+}
+
+.navLine {
+  border-bottom: 1px solid rgba(132, 131, 131, .87);
+  position: fixed;
+  top: 80px;
+  width: 70%;
+  transition: all 0.5s ease;
+}
+
+.bigLine {
+  border-bottom: 1px solid rgba(132, 131, 131, .87);
+  top: 80px;
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+}
+
+.navgroup .secondList {
   display: flex;
   justify-content: flex-end;
   gap: 20px;
   align-items: center;
 }
 
-.secondList .d-flex{
-
-}
-
-.secondList li {
+.navgroup .secondList li {
   list-style: none;
 }
 

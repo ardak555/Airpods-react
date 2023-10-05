@@ -1,5 +1,5 @@
 import { AiFillApple, AiOutlineDown, AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
-import { BsFillBagFill } from "react-icons/bs";
+import { BsBag} from "react-icons/bs";
 import "./App.css";
 import bootstrap from "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import First from "./First/First";
@@ -43,6 +43,28 @@ function App() {
   //   };
   // }
   // , []);
+  
+  useEffect(() => {
+
+    const navLine = document.querySelector(".navLine");
+
+    function handleScroll() {
+      if (window.scrollY > 50) {
+        navLine.classList.add("bigLine");
+      } else {
+        navLine.classList.remove("bigLine");
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }
+  , []);
+
+  
   return (
     <>
       {/* <div className="App">
@@ -120,10 +142,10 @@ function App() {
               <li className="navBarLi">Support</li>
 
               <li className="navBarLi navBaritem">
-                <AiOutlineSearch className="logo " />
+                <AiOutlineSearch className="logo trans" />
               </li>
               <li className="navBarLi navBaritem">
-                <BsFillBagFill className="logo" />
+                <BsBag className="logo trans" />
               </li>
               <li className="navBarMenu">
                 <AiOutlineMenu />
@@ -131,6 +153,7 @@ function App() {
             </ul>
           </div>
           <div className="secondHeader">
+            <div className="navgroup">
               <h3 className="navHeader">AirPods Pro (2nd generation)</h3>
               <ul className="secondList">
                 <li>Overview</li>
@@ -142,11 +165,13 @@ function App() {
                 <li>
                   <div className="buyBtn">Buy</div>
                 </li>
+                
               </ul>
-            <div className="navLine"></div>
+              <div className="navLine"></div>
+            </div>
           </div>
-          
         </div>
+        <First />
       </div>
     </>
   );
