@@ -54,6 +54,8 @@ function App() {
       } else {
         navLine.classList.remove("bigLine");
       }
+  
+      
     }
 
     window.addEventListener("scroll", handleScroll);
