@@ -1,0 +1,228 @@
+.App{
+  padding: 0;
+  background-color: black;
+}
+/* 
+.navBarUl{
+  margin: 0;
+}
+
+.allnav{
+  display: grid;
+  align-items: center;
+  position: relative;
+}
+
+.container .navBarUl li{
+  display: inline-block;
+  padding: 10px 20px;
+  color: rgba(255, 255, 255, .8);
+  font-size: 12px;
+  text-decoration: none;
+}
+.navbar{
+  background-color: black;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.logo{
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.secondline{
+  margin: 0;
+  background-color: black;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+  top: 50px;
+  left: 1%;
+  width: 100%;
+}
+
+.scroledSecondLine{
+  margin: 0;
+  margin-bottom: 10px;
+  background-color: rgba(18, 17, 17, 0.986);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+  top: 0px;
+  left: 1%;
+  width: 100%;
+  transition: all 0.5s ease;
+  font-size: 12px;
+  border-bottom:1px solid rgba(132, 131, 131, .24) ;
+}
+
+
+.navLine{
+  border-bottom:1px solid rgba(132, 131, 131, .24);
+  position: fixed;
+  top: 110px;
+  width: 70%;
+  transition: all 0.5s ease;
+}
+
+
+.bigLine{
+   border-bottom:1px solid rgba(132, 131, 131, .24);
+  border-bottom: #0071e3;
+  top: 110px;
+  width:100%;
+  transition: all 0.5s ease-in-out;
+}
+
+
+.navHeader{
+  color: rgba(255, 255, 255, .8);
+}
+
+.container .navBarTrayItem li{
+  display: inline-block;
+  padding: 10px 20px;
+  color: rgba(255, 255, 255, .8);
+  font-size: 12px;
+  font-weight: thin;
+  text-decoration: none;
+}
+
+.container .buyButton{
+  background-color:#0071e3;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  text-decoration: none;
+}
+
+.container .navBarUl .navBarMenu{
+  display: none;
+}
+
+.container .navBarTrayItem .navBarTraySmall{
+  display: none;
+}
+
+@media screen and (max-width: 834px){
+  .container .navBarUl li{
+    display: none;
+  }
+  .container .navBarUl{
+    display: flex;
+  }
+
+  .container .navBarUl .navBaritem{
+    display: inline-block;
+  }
+  .container .navBarUl .navBarMenu{
+    display:inline-block;
+  }
+  .container .navBarTrayItem{
+    display: none;
+  }
+  .container .navBarTrayItem .navBarTraySmall{
+    display: inline-block;
+  }
+
+  .container .buyButton{
+    display: flex;
+  }
+  .container .navBarUl li:nth-child(1){
+    display: inline-block;
+  }
+  .container .navBarTrayItem li:nth-child(1){
+    display: inline-block;
+  }
+  .container .buyButton:nth-child(1){
+    display: inline-block;
+  }
+
+} */
+.mainHeader{
+  display: flex;
+  flex-direction: column;
+}
+
+.navBarUl {
+  list-style: none;
+  justify-content: space-between;
+  color: rgba(255, 255, 255, .8);
+  font-size: 12px;
+}
+
+.secondList {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  align-items: center;
+}
+
+.secondList .d-flex{
+
+}
+
+.secondList li {
+  list-style: none;
+}
+
+.secondHeader {
+  display: flex;
+  color: rgba(255, 255, 255, .8);
+  align-items: center;
+  justify-content: space-around;
+  font-size: 12px;
+  position: fixed;
+  top: 30px;
+  background-color: black;
+  left: 0%;
+  width: 100%;
+}
+
+.navHeader {
+  color: white;
+  font-size: 20px;
+}
+
+.buyBtn {
+  background-color: #0071e3;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  text-decoration: none;
+}
+
+.navBarUl {
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container .secondHeader .secondList .navBarTraySmall {
+  display: none;
+}
+
+.container .navBarUl .navBarMenu {
+  display: none;
+}
+
+
+@media screen and (max-width: 834px) {
+
+  .container .secondHeader .secondList .navBarTraySmall,
+  .container .navBarUl .navBarMenu {
+    display: inline-block;
+  }
+
+}
