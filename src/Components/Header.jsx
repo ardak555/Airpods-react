@@ -31,7 +31,7 @@ import React, { useEffect } from "react";
   
   
     useEffect(() => {
-      const scroledSecondLine = document.querySelector(".scroledSecondLine");
+      const scroledSecondLine = document.querySelector(".secondHeader");
   
       function handleScrolll() {
         if (window.scrollY > 50) {
@@ -80,7 +80,7 @@ import React, { useEffect } from "react";
                 </div>
               </ul>
             </div>
-            <div className="secondHeader scroledSecondLine">
+            <div className="secondHeader">
               <div className="navgroup">
                 <h3 className="navHeader">AirPods Pro (2nd generation)</h3>
                 <ul className="secondList">
