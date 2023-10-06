@@ -87,6 +87,14 @@ h1{
     right: 16.9rem;
     
 }
+
+.zoom{
+    position: sticky;
+    top: 20vh;
+    will-change: transform;
+    width: 100%;
+}
+
 @media  screen and (max-width: 768px) {
     .down{
         display: flex !important;

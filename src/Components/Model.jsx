@@ -95,6 +95,7 @@ const Model = () => {
   const normalizedCount = Math.min(Math.max(scrolled, 0), frames.length - 1);
 
   return (
+    <div className="zoom">
     <div className="container containerArea">
       <div className="col">
         <div className=" row text-center">
@@ -151,6 +152,7 @@ const Model = () => {
         </Slide>
         </Zoom>
       </div>
+    </div>
     </div>
   );
 };
