@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect, useState } from "react";
 import Zoom from "react-reveal/Zoom";
 
+
 import Frame1 from "../assets/images/firstImages/heroairpod_3.png";
 import Frame2 from "../assets/images/firstImages/heroairpod_4.png";
 import Frame3 from "../assets/images/firstImages/heroairpod_5.png";
@@ -52,7 +53,7 @@ const Model = () => {
     const winHeightPx =
       document.documentElement.scrollHeight -
       document.documentElement.clientHeight;
-    const scrollLen = Math.ceil(((scrollPx / winHeightPx) * 20) / 0.5);
+    const scrollLen = Math.ceil(((scrollPx / winHeightPx) * 15/ 0.5) );
     setScrolled(scrollLen);
   };
 
@@ -94,15 +95,70 @@ const Model = () => {
 
   const normalizedCount = Math.min(Math.max(scrolled, 0), frames.length - 1);
 
+  useEffect(() => {
+    const vh = window.innerHeight / 100;
+
+    const handleScroll = () => {
+      const scrollTop = document.documentElement.scrollTop;
+      const start = 100 * vh;
+      const stop = 200 * vh;
+      const zoomElement = document.querySelector('.zoom');
+
+      if (scrollTop > start && scrollTop < stop && zoomElement) {
+        const scale = Math.max(1 + (scrollTop - start) / 500, 1);
+        zoomElement.style.transform = `scale(${scale})`;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const [opacity, setOpacity] = useState(1);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const vh = window.innerHeight;
+
+      // Belirli bir scroll pozisyonu belirlemek için burada istediğiniz değeri kullanabilirsiniz.
+      const scrollThreshold = 0 * vh; // Örneğin, 80vh'de kaybolacaksa
+
+      // Scroll pozisyonu scrollThreshold'dan büyükse opacity'yi azalt
+      if (scrollY > scrollThreshold) {
+        const opacityValue = 1 - (scrollY - scrollThreshold) / (vh * 0.7);
+        setOpacity(opacityValue > 0 ? opacityValue : 0);
+      } else {
+        setOpacity(1); // Eğer scroll pozisyonu threshold'dan küçükse opacity'yi sıfırla
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+
+
   return (
+    <>
+    <section class="top"></section>
+    <div className="wrap">
     <div className="zoom">
     <div className="container containerArea">
       <div className="col">
         <div className=" row text-center">
           <div className="title">
+            <div className="slogan" style={{ opacity }}>
             <Zoom delay={1600}>
               <h1>AirPodsPro</h1>
             </Zoom>
+            </div>
             <Zoom delay={1000}>
               <img
                 className="imageOne"
@@ -112,12 +168,13 @@ const Model = () => {
             </Zoom>
           </div>
         </div>
-
+        
         <div className="row hole"></div>
-
+        <section class="bottom"></section>
         <Zoom delay={2000}>
         <Slide  delay={2000} top>
-          <div className="down text-center">
+          <div>
+            <div className="slogan down text-center " style={{ opacity }}>
             <div className="col-lg-6">
               <h5>
                 <a
@@ -148,12 +205,16 @@ const Model = () => {
                 </a>
               </h5>
             </div>
+            </div>
           </div>
         </Slide>
         </Zoom>
       </div>
     </div>
     </div>
+    </div>
+     
+    </>
   );
 };
 
