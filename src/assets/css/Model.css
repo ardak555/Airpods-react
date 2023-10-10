@@ -78,13 +78,13 @@ h1{
     align-items: center;
 }
 .imageOne{
-    width: rem;
+    width: 95%;
     height: 30rem;
     object-fit: cover;
     position: absolute;
     z-index: 1;
-    bottom: 7.3rem;
-    right: 16.9rem;
+    bottom: 19.3rem;
+    right: 0;
     
 }
 
@@ -95,6 +95,24 @@ h1{
     width: 100%;
 }
 
+  
+.top {
+    height: 20vh;
+ }
+
+.wrap {
+    height: 200vh;
+    margin-right: 3rem;
+  }
+  
+.slogan{
+    opacity: 1;
+}
+
+.a{
+    display: flex;
+
+}
 @media  screen and (max-width: 768px) {
     .down{
         display: flex !important;
