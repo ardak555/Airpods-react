@@ -4,6 +4,7 @@ import HTwoCont from "./Components/HTwoCont";
 import HTwoIntro from "./Components/HTwoIntro";
 import Header from "./Components/Header";
 import Model from "./Components/Model";
+import NoiseIntro from "./Components/NoiseIntro";
 import SoundTurn from "./Components/SoundTurn";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         {/* jfjg */}
         <HTwoIntro />
         <HTwoCont />
+        <NoiseIntro />
         <SoundTurn />
       </div>
     </>

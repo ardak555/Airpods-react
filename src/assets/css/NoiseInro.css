@@ -1,0 +1,18 @@
+.headline-sections{
+    font-size: 110px;
+    line-height: .9166666667;
+    font-weight: 600;
+    letter-spacing: -0.0166666667em;
+    font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    margin-top: 0;
+    margin-bottom: 48px;
+}
+
+.section-alls{
+    margin-left: auto;
+    margin-right: auto;
+    width: 980px;
+    margin-top: 8rem;
+
+}
+
