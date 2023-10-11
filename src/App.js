@@ -6,6 +6,7 @@ import Header from "./Components/Header";
 import Model from "./Components/Model";
 import NoiseIntro from "./Components/NoiseIntro";
 import SoundTurn from "./Components/SoundTurn";
+import VideoHeadphone from "./Components/VideoHeadphone";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         {/* jfjg */}
         <HTwoIntro />
         <HTwoCont />
+        <VideoHeadphone />
         <NoiseIntro />
         <SoundTurn />
       </div>
