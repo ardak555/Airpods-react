@@ -1,0 +1,62 @@
+.conH2{
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+}
+
+.chipCont{
+    width: 532px;
+    height: 532px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.parH2{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    padding: 7.5vw 6vw;
+    position: relative;
+    overflow: hidden;
+}
+
+.parH2-cop{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.all-container{
+    background-color: #424245;
+    border: 1px solid #424245;
+    display: grid;
+    grid-gap: 1px;
+    grid-template-columns: 1fr 1fr;
+    justify-items: stretch;
+    width: 100%;
+    position: relative;
+    left: -1px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 2000px;
+}
+
+
+.paragraph{
+    font-size: 25px;
+    line-height: 1.1428571429;
+    font-weight: 550;
+    letter-spacing: .007em;
+    font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+
+
+.green{
+    color: #00ff41;
+}
+
+.gray{
+    color: #8e8e93;
+}
