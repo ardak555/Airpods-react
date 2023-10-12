@@ -1,14 +1,39 @@
-.daceHeader{
+ .daceHeader{
     color: white;
-    display: flex;
-    flex-direction: column;
+  
     font-size: 120px;
     line-height: .9166666667;
     font-weight: 700;
     letter-spacing: -0.025em;
+ 
+}
+/*
+.overlay{
+    width: 100%;
     height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: 3px 3px;
+    z-index: 2;
 }
 
+.lose{
+    opacity: 0;
+
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 3;
+    max-width: 400px;
+    width: 100%;
+    height: 50px;
+}
 .opacitys{
       transition: "opacity 0.3s";
     width: "100px";
@@ -17,4 +42,53 @@
     opacity: 0.2;
 }
 
+.main{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+}
 
+video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+} */
+
+.bg-video-wrap {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 200vh;
+
+  }
+
+  video {
+    min-width: 100%;
+    min-height: 200vh;
+    z-index: 1;
+  }
+
+  .overlay {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-size: 3px 3px;
+    z-index: 2;
+  }
+
+  
+.bg-video-wrap h1 {
+    font-size: 5em;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+
+    margin: auto;
+    z-index: 3;
+
+  }
