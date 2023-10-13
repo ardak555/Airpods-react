@@ -64,7 +64,7 @@ video{
 
   }
 
-  video {
+  .video {
     min-width: 100%;
     min-height: 200vh;
     z-index: 1;
