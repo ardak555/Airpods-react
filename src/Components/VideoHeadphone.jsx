@@ -49,7 +49,7 @@ const VideoHeadphone = () => {
   }, []);
 
   return (
-    <VideoContainer style={{ opacity }}>
+    <VideoContainer className='opacityHeadphoneVideoImg' style={{ opacity }}>
       <VideoBackground autoPlay loop muted>
         <source src={videoBg} type="video/mp4" />
       </VideoBackground>

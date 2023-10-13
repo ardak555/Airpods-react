@@ -60,7 +60,7 @@ const DanceVideo = () => {
 
   return (
     <div class="bg-video-wrap d-flex justify-content-center align-items-center">
-      <video style={{ opacityVid }} src={danceVid} autoPlay loop muted></video>
+      <video className="video" style={{ opacityVid }} src={danceVid} autoPlay loop muted></video>
       <div class="overlay"></div>
       <h1 style={{ opacity }}>
         <Zoom>
@@ -71,7 +71,6 @@ const DanceVideo = () => {
           </div>
         </Zoom>
       </h1>
-
     </div>
   );
 };

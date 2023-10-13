@@ -19,4 +19,6 @@
     object-fit: cover;
 }
 
-
+.opacityHeadphoneVideoImg{
+    opacity: 1 !important;
+}
