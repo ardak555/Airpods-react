@@ -18,8 +18,6 @@ function App() {
         <Header />
         <Model />
         <DanceVideoEntry />
-        {/* <DanceVideo/> */}
-        {/* jfjg */}
         <HTwoIntro />
         <HTwoCont />
         <VideoHeadphone />
