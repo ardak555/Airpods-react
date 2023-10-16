@@ -1,6 +1,6 @@
 import "./App.css";
-import DanceVideo from "./Components/DanceVideo";
 import DanceVideoEntry from "./Components/DanceVideoEntry";
+import Footer from "./Components/Footer";
 import HTwoCont from "./Components/HTwoCont";
 import HTwoIntro from "./Components/HTwoIntro";
 import Header from "./Components/Header";
@@ -24,6 +24,7 @@ function App() {
         <NoiseIntro />
         <HeadphoneHead />
         <SoundTurn />
+        <Footer />
       </div>
     </>
   );

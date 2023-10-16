@@ -1,0 +1,42 @@
+.footer{
+    background-color: white;
+    font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    color: #6e6e73;
+    font-size: 1em;
+}
+
+.footer-line{
+    border-bottom: 1px solid #6a6a6a;
+}
+
+.footer-navi{
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    color: #6e6e73;
+}
+
+.second-line-footer a{
+    text-decoration: none;
+}
+
+.second-line-footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.genel{
+    width: 100% !important;
+    padding: 20px 80px;
+}
+
+.second-line-footer a{
+    text-decoration: none;
+    color: #6e6e73;
+}
+
+.firts-line-footer a{
+ color: #06c;
+ text-decoration: none;
+}
