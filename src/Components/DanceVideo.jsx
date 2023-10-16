@@ -1,78 +1,101 @@
-import React, { useEffect, useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "../assets/css/DanceVideo.css";
-import Zoom from "react-reveal/Zoom";
-import danceVid from "../assets/videos/dancing.mp4";
-import { Animator, ScrollContainer, ScrollPage } from "react-scroll-motion";
+import gsap from "gsap";
+import CustomEase from "gsap/dist/CustomEase";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import React, { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
-const DanceVideo = () => {
-  const [opacity, setOpacity] = useState(1);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const vh = window.innerHeight;
 
-      // Belirli bir scroll pozisyonu belirlemek için burada istediğiniz değeri kullanabilirsiniz.
-      const scrollThreshold = 2.1 * vh; // Örneğin, 80vh'de kaybolacaksa
+function DancingSection() {
 
-      // Scroll pozisyonu scrollThreshold'dan büyükse opacity'yi azalt
-      if (scrollY > scrollThreshold) {
-        const opacityValue = 1 - (scrollY - scrollThreshold) / (vh * 0.7);
-        setOpacity(opacityValue > 0 ? opacityValue : 0);
-      } else {
-        setOpacity(1); // Eğer scroll pozisyonu threshold'dan küçükse opacity'yi sıfırla
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const [opacityVid, setOpacityVid] = useState(1);
+  const { ref, inView } = useInView({
+    threshold: 0
+  });
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const vh = window.innerHeight;
+    gsap.registerPlugin(ScrollTrigger);
 
-      // Belirli bir scroll pozisyonu belirlemek için burada istediğiniz değeri kullanabilirsiniz.
-      const scrollThreshold = 1.5 * vh; // Örneğin, 80vh'de kaybolacaksa
-
-      // Scroll pozisyonu scrollThreshold'dan büyükse opacity'yi azalt
-      if (scrollY > scrollThreshold) {
-        const opacityValue = 1 - (scrollY - scrollThreshold) / (vh * 0.7);
-        setOpacityVid(opacityValue > 0 ? opacityValue : 0);
-      } else {
-        setOpacityVid(1); // Eğer scroll pozisyonu threshold'dan küçükse opacity'yi sıfırla
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    gsap.to(".dancing-title-1", {
+      scrollTrigger: {
+        trigger: ".dancing-title-1",
+        scrub: 1,
+        start: "bottom bottom",
+        end: "top 50%",
+      },
+      opacity: 0.1,
+      duration: 2,
+      ease: "none",
+    }); 
+    gsap.to(".dancing-title-2", {
+      scrollTrigger: {
+        trigger: ".dancing-title-1",
+        scrub: 1,
+        start: "top 50%",
+        end: "top 20%",
+      },
+      keyframes: [{ opacity: 1 }, { opacity: 0.1 }],
+      duration: 2,
+      ease: "none",
+    });
+    gsap.to(".dancing-title-3", {
+      scrollTrigger: {
+        trigger: ".dancing-title-1",
+        scrub: 1,
+        start: "top 30%",
+        end: "top 5%",
+      },
+      keyframes: [{ opacity: 0.1 }, { opacity: 0.1 }],
+      duration: 2,
+      ease: "none",
+    });
+    gsap.to(".dancing-title-4", {
+      scrollTrigger: {
+        trigger: ".dancing-title-1",
+        scrub: 1,
+        start: "top 5%",
+        end: "top -40%",
+      },
+      keyframes: [{ opacity: 1 }, { opacity: 0.1 }],
+      duration: 2,
+      ease: "none",
+    });
+    gsap.to(".dancing-video", {
+      scrollTrigger: {
+        trigger: "#dancingSection",
+        scrub: true,
+        start: "top 145%",
+        end: "top -100%",
+      },
+      keyframes: [{ opacity: 1 }, { opacity: 0 }],
+      duration: 2,
+      ease: "none",
+    });
   }, []);
 
   return (
-    <div class="bg-video-wrap d-flex justify-content-center align-items-center">
-      <video className="video" style={{ opacityVid }} src={danceVid} autoPlay loop muted></video>
-      <div class="overlay"></div>
-      <h1 style={{ opacity }}>
-        <Zoom>
-          <div className="daceHeader zoom2">
-            <div className="headerOne">Adaptive Audio.</div>
-            <div className="haderTwo">Now Playing.</div>
-            <div></div>
-          </div>
-        </Zoom>
+    
+    <div
+      id="dancingSection"
+      className="w-full h-[200vh] z-50  relative lg:p-56 p-6"
+      ref={ref}
+    >
+      <h1 className="text-white lg:text-[3.2rem] text-3xl font-bold lg:w-[850px] w-full leading-[1.2]">
+        <span className="opacity-100 dancing-title-1">
+          Up to 2x more Active Noise Cancellation than the previous generation.
+        </span>
+        <span className="opacity-10 dancing-title-2">
+          Spatial Audio takes immersion to a remarkably personal level.
+        </span>
+        <span className="opacity-10 dancing-title-3">
+          Touch control lets you adjust volume with a swipe.
+        </span>
+        <span className="opacity-10 dancing-title-4">
+          And a leap in power delivers 6 hours of battery life from a single
+          charge.
+        </span>
       </h1>
     </div>
   );
-};
+}
 
-export default DanceVideo;
+export default DancingSection;
