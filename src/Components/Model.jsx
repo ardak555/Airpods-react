@@ -4,7 +4,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect, useState } from "react";
 import Zoom from "react-reveal/Zoom";
 
-
 import Frame1 from "../assets/images/firstImages/heroairpod_3.png";
 import Frame2 from "../assets/images/firstImages/heroairpod_4.png";
 import Frame3 from "../assets/images/firstImages/heroairpod_5.png";
@@ -43,6 +42,7 @@ import { Slide } from "react-reveal";
 const Model = () => {
   const [scrolled, setScrolled] = useState(1);
 
+  //Kulaklık geçiş animasyonu
   useEffect(() => {
     window.addEventListener("scroll", scrollProgress);
     return () => window.removeEventListener("scroll", scrollProgress);
@@ -53,7 +53,7 @@ const Model = () => {
     const winHeightPx =
       document.documentElement.scrollHeight -
       document.documentElement.clientHeight;
-    const scrollLen = Math.ceil(((scrollPx / winHeightPx) * 15/ 0.5) );
+    const scrollLen = Math.ceil(((scrollPx / winHeightPx) * 15) / 0.5);
     setScrolled(scrollLen);
   };
 
@@ -95,6 +95,7 @@ const Model = () => {
 
   const normalizedCount = Math.min(Math.max(scrolled, 0), frames.length - 1);
 
+  //Scroll yapmıyorrrmuş gibi gösteren fonksiyon
   useEffect(() => {
     const vh = window.innerHeight / 100;
 
@@ -102,7 +103,7 @@ const Model = () => {
       const scrollTop = document.documentElement.scrollTop;
       const start = 100 * vh;
       const stop = 200 * vh;
-      const zoomElement = document.querySelector('.zoom');
+      const zoomElement = document.querySelector(".zoom");
 
       if (scrollTop > start && scrollTop < stop && zoomElement) {
         const scale = Math.max(1 + (scrollTop - start) / 500, 1);
@@ -110,13 +111,14 @@ const Model = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
+  //Arkaplan yazısı opaklık ayarı
   const [opacity, setOpacity] = useState(1);
 
   useEffect(() => {
@@ -143,77 +145,77 @@ const Model = () => {
     };
   }, []);
 
-
-
   return (
     <>
-    <section class="top"></section>
-    <div className="wrap">
-    <div className="zoom">
-    <div className="container containerArea">
-      <div className="col">
-        <div className=" row text-center">
-          <div className="title">
-            <div className="slogan" style={{ opacity }}>
-            <Zoom delay={1600}>
-              <h1>AirPodsPro</h1>
-            </Zoom>
+      <section class="top"></section>
+      <div className="wrap">
+        <div className="zoom">
+          <div className="container containerArea">
+            <div className="col">
+              <div className=" row text-center">
+                <div className="title">
+                  <div className="slogan" style={{ opacity }}>
+                    <Zoom delay={1600}>
+                      <h1>AirPodsPro</h1>
+                    </Zoom>
+                  </div>
+                  <Zoom delay={1000}>
+                    <img
+                      className="imageOne"
+                      src={frames[normalizedCount]}
+                      alt="headphones"
+                    />
+                  </Zoom>
+                </div>
+              </div>
+
+              <div className="row hole"></div>
+              <section class="bottom"></section>
+              <Zoom delay={2000}>
+                <Slide delay={2000} top>
+                  <div>
+                    <div
+                      className="slogan down text-center "
+                      style={{ opacity }}
+                    >
+                      <div className="col-lg-6">
+                        <h5>
+                          <a
+                            className="watchLink"
+                            href="https://"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Watch Quiet the noise
+                            <span>
+                              <AiOutlinePlayCircle />
+                            </span>
+                          </a>
+                        </h5>
+                      </div>
+                      <div className="col-lg-6">
+                        <h5>
+                          <a
+                            className="watchLink"
+                            href="https://"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Watch the film
+                            <span>
+                              <AiOutlinePlayCircle />
+                            </span>
+                          </a>
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+                </Slide>
+              </Zoom>
             </div>
-            <Zoom delay={1000}>
-              <img
-                className="imageOne"
-                src={frames[normalizedCount]}
-                alt="headphones"
-              />
-            </Zoom>
           </div>
         </div>
-        
-        <div className="row hole"></div>
-        <section class="bottom"></section>
-        <Zoom delay={2000}>
-        <Slide  delay={2000} top>
-          <div>
-            <div className="slogan down text-center " style={{ opacity }}>
-            <div className="col-lg-6">
-              <h5>
-                <a
-                  className="watchLink"
-                  href="https://"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Watch Quiet the noise
-                  <span>
-                    <AiOutlinePlayCircle />
-                  </span>
-                </a>
-              </h5>
-            </div>
-            <div className="col-lg-6">
-              <h5>
-                <a
-                  className="watchLink"
-                  href="https://"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Watch the film
-                  <span>
-                    <AiOutlinePlayCircle />
-                  </span>
-                </a>
-              </h5>
-            </div>
-            </div>
-          </div>
-        </Slide>
-        </Zoom>
       </div>
-    </div>
-    </div>
-    </div>
-     
     </>
   );
 };

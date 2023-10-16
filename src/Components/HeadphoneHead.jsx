@@ -4,11 +4,10 @@ import s from "../assets/images/airpodsHead/sHead.jpeg";
 import m from "../assets/images/airpodsHead/mHead.jpeg";
 import l from "../assets/images/airpodsHead/lHead.jpeg";
 import headless from "../assets/images/airpodsHead/headless.jpeg";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState} from "react";
 import { useInView } from "react-intersection-observer";
 
-const headphoneHeadsArr = [xs, s, m, l];
+//const headphoneHeadsArr = [xs, s, m, l];
 
 const HeadphoneHead = () => {
   const [smallOpacity, setSmallOpacity] = useState(1);

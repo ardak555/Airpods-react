@@ -1,5 +1,6 @@
 import "./App.css";
 import DanceVideo from "./Components/DanceVideo";
+import DanceVideoEntry from "./Components/DanceVideoEntry";
 import HTwoCont from "./Components/HTwoCont";
 import HTwoIntro from "./Components/HTwoIntro";
 import Header from "./Components/Header";
@@ -16,7 +17,8 @@ function App() {
       <div className="App">
         <Header />
         <Model />
-        <DanceVideo/>
+        <DanceVideoEntry />
+        {/* <DanceVideo/> */}
         {/* jfjg */}
         <HTwoIntro />
         <HTwoCont />
